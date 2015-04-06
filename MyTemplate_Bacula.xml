@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-07-11T09:51:26Z</date>
+    <date>2015-04-06T18:37:05Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,33 +9,40 @@
     </groups>
     <templates>
         <template>
-            <template>bacula-director</template>
-            <name>bacula-director</name>
+            <template>MyTemplate_Bareos</template>
+            <name>MyTemplate_Bareos</name>
             <groups>
                 <group>
                     <name>Templates</name>
                 </group>
             </groups>
-            <applications/>
+            <applications>
+                <application>
+                    <name>Bacula director</name>
+                </application>
+            </applications>
             <items>
                 <item>
                     <name>bacula.custommessage</name>
                     <type>2</type>
-                    <snmp_community>public</snmp_community>
+                    <snmp_community/>
                     <multiplier>0</multiplier>
-                    <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+                    <snmp_oid/>
                     <key>bacula.custommessage</key>
-                    <delay>30</delay>
+                    <delay>0</delay>
                     <history>90</history>
-                    <trends>0</trends>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>1</value_type>
                     <allowed_hosts/>
                     <units/>
                     <delta>0</delta>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
@@ -50,8 +57,13 @@
                     <port/>
                     <description/>
                     <inventory_link>0</inventory_link>
-                    <applications/>
+                    <applications>
+                        <application>
+                            <name>Bacula director</name>
+                        </application>
+                    </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
             </items>
             <discovery_rules>
@@ -61,12 +73,15 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>bacula.jobs</key>
-                    <delay>3600</delay>
+                    <delay>60</delay>
                     <status>0</status>
                     <allowed_hosts/>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <delay_flex/>
                     <params/>
@@ -77,7 +92,7 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>{#JOBNAME}:</filter>
+                    <filter>:</filter>
                     <lifetime>30</lifetime>
                     <description/>
                     <item_prototypes>
@@ -96,9 +111,12 @@
                             <allowed_hosts/>
                             <units>Bytes</units>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -113,8 +131,13 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
                             <name>bacula.fd_errors_non_fatal[{#JOBNAME}]</name>
@@ -131,9 +154,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -148,8 +174,13 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
                             <name>bacula.fd_fileswritten[{#JOBNAME}]</name>
@@ -166,9 +197,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -183,8 +217,13 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
                             <name>bacula.job_exit_code[{#JOBNAME}]</name>
@@ -194,16 +233,19 @@
                             <snmp_oid/>
                             <key>bacula.job_exit_code[{#JOBNAME}]</key>
                             <delay>0</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -218,8 +260,13 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
                             <name>bacula.lastvolumebytes[{#JOBNAME}]</name>
@@ -236,9 +283,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -253,8 +303,13 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
                             <name>bacula.sd_byteswritten[{#JOBNAME}]]</name>
@@ -271,9 +326,12 @@
                             <allowed_hosts/>
                             <units>Bytes</units>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -288,8 +346,13 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
                             <name>bacula.sd_errors[{#JOBNAME}]</name>
@@ -306,9 +369,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -323,8 +389,13 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
                             <name>bacula.sd_fileswritten[{#JOBNAME}]</name>
@@ -341,9 +412,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -358,8 +432,13 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
                             <name>bacula.verify_filesexamined[{#JOBNAME}]</name>
@@ -376,9 +455,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -393,49 +475,19 @@
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications/>
+                            <applications>
+                                <application>
+                                    <name>Bacula director</name>
+                                </application>
+                            </applications>
                             <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>bacula.verify_result[{#JOBNAME}]</name>
-                            <type>2</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>bacula.verify_result[{#JOBNAME}]</key>
-                            <delay>0</delay>
-                            <history>90</history>
-                            <trends>365</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>0</delta>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications/>
-                            <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{bacula-director:bacula.job_exit_code[{#JOBNAME}].str('OK')}#0</expression>
-                            <name>Backup error for job {#JOBNAME} on {HOSTNAME}</name>
+                            <expression>{MyTemplate_Bareos:bacula.job_exit_code[{#JOBNAME}].regexp(^OK$)}=0</expression>
+                            <name>Backup error for job [{#JOBNAME}] on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -443,8 +495,8 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{bacula-director:bacula.job_exit_code[{#JOBNAME}].nodata(129600)}#0</expression>
-                            <name>Backup job {#JOBNAME} was not started for 36 hours on {HOSTNAME}</name>
+                            <expression>{MyTemplate_Bareos:bacula.job_exit_code[{#JOBNAME}].nodata(129600)}#0</expression>
+                            <name>Backup job [{#JOBNAME}] was not started for 36 hours on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -452,7 +504,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{bacula-director:bacula.fd_errors_non_fatal[{#JOBNAME}].last(0)}#0</expression>
+                            <expression>{MyTemplate_Bareos:bacula.fd_errors_non_fatal[{#JOBNAME}].last(0)}#0</expression>
                             <name>Bacula job [{#JOBNAME}] FD non-fatal error on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
@@ -461,7 +513,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{bacula-director:bacula.sd_errors[{#JOBNAME}].last(0)}#0</expression>
+                            <expression>{MyTemplate_Bareos:bacula.sd_errors[{#JOBNAME}].last(0)}#0</expression>
                             <name>Bacula job [{#JOBNAME}] SD errors on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
@@ -469,33 +521,20 @@
                             <description/>
                             <type>0</type>
                         </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{bacula-director:bacula.verify_result[{#JOBNAME}].last(0)}&gt;0</expression>
-                            <name>Bacula verify job [{#JOBNAME}] error on {HOSTNAME}</name>
-                            <url/>
-                            <status>0</status>
-                            <priority>4</priority>
-                            <description/>
-                            <type>0</type>
-                        </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
+                    <host_prototypes/>
                 </discovery_rule>
             </discovery_rules>
-            <macros>
-                <macro>
-                    <macro>{$JOBNAME}</macro>
-                    <value>mgmt-sc-backup</value>
-                </macro>
-            </macros>
+            <macros/>
             <templates/>
             <screens/>
         </template>
     </templates>
     <triggers>
         <trigger>
-            <expression>{bacula-director:bacula.custommessage.regexp(&quot;^0$&quot;)}=0</expression>
-            <name>Bacula custom message on {HOSTNAME}: {ITEM.LASTVALUE}. Set to 0 to reset trigger.</name>
+            <expression>{MyTemplate_Bareos:bacula.custommessage.regexp(&quot;^0$&quot;)}=0</expression>
+            <name>Bacula custom message on {HOSTNAME}: [{ITEM.LASTVALUE}]. Set to 0 to reset trigger.</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
