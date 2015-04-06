@@ -73,7 +73,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>bareos.jobs</key>
-                    <delay>60</delay>
+                    <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>

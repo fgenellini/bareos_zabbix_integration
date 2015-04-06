@@ -1,5 +1,3 @@
-WARNING: https://www.bareos.org/en/faq/items/why_fork.html You may be interested in using Bareos instead of original Bareos.
-
 bareos_zabbix_integration
 =========================
 
@@ -9,6 +7,7 @@ Abilities
 ---------
 * separate monitoring for each job
 * low-level auto-discovery of new jobs
+* send emails about jobs
 
 Workflow
 ---------
@@ -24,25 +23,17 @@ Triggers
  
 Installation
 ------------
-
-* Copy file somewhere. Default is /etc/bareos/bareos-to-zabbix
-* Make sure that zabbix user can launch bconsole and get output of 'show jobs' command.
+ 
+* cd /etc/bareos
+* git clone https://github.com/paleg/bareos_zabbix_integration.git
+* Make sure that zabbix user can launch bconsole and get output of 'show jobs' command (add 'zabbix' user to 'bareos' group)
 * Tweak conf.py:
-	* path to zabbix_sender
+	* path to zabbix agent conf
 	* bconsole config file
-	* jobs list cache file. (!) This file should be avaliable for write to zabbix user.
 	* timeout for bconsole command in seconds (default 5 seconds)
-	* hostname for sending messages to zabbix
-* Add UserParameter from to zabbix_agentd.conf. Example in file conf-zabbix_agentd-userparam. Restart zabbix_agentd
-* Config Messages resuorce in bareos-director.conf. Example in file conf-bareos-dir-messages. You can directly include this file with @/etc/bareos/bareos-to-zabbix/conf-bareos-dir-messages. Reload config for bareos-director
-* Add template tmpl bareos-director.xml to zabbix. Assign it to host with bareos-director.
+    * log dir
+    * email settings ('From' header and smtp server)
+* Add UserParameter from to zabbix_agentd.conf ( "UserParameter=bareos.jobs,/etc/bareos/bareos_zabbix_integration/get-bareos-jobs-json.py" )
+* Config Messages resource in bareos-dir.conf. ( Samples can be found with "./notify.py --help" and "./notify_operator.py --help" )
+* Add template MyTemplate_Bareos.xml to zabbix. Assign it to host with bareos-director.
 * Disable auto-generated triggers for jobs that are not backup type(restore jobs, ...)
-
-Feedback
---------
-
-Feel free to send bug reports and feature requests here:
- * https://github.com/selivan/bareos_zabbix_integration/issues
- * mail: selivan5 AT yandex.ru
-
-If you are using this solution in production - please, write me few strings about it. It's very important for me to know that my work is not meaningless.
