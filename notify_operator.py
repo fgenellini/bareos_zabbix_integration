@@ -14,7 +14,7 @@ from zbxsend import Metric, send_to_zabbix
 from conf import conf
 
 def sendmail(msg, recipients):
-    subject = "Bacula: message for operator"
+    subject = "Bareos: message for operator"
     logging.debug( "sending email ({0}) to '{1}'".format(subject, recipients) )
 
     msg = MIMEText(msg)
@@ -42,11 +42,11 @@ if sys.version_info >= (3,):
 parser = argparse.ArgumentParser(
             formatter_class=RawTextHelpFormatter,
             description=
-"""Simple script to send Bacula operator reports to Zabbix.
-Should be used in Bacula-dir config instead of mail command:
+"""Simple script to send Bareos operator reports to Zabbix.
+Should be used in Bareos-dir config instead of mail command:
     mail = root@localhost,admin@domain = all, !skipped
     operatorcommand = "{0} [--recipients '%r']"
-Hostnames in Zabbix and Bacula must correspond
+Hostnames in Zabbix and Bareos must correspond
 """.format(os.path.realpath(__file__))
                                 )
 
@@ -60,7 +60,7 @@ args = parser.parse_args()
 
 msg = sys.stdin.read()
 
-metrics = [ Metric(conf['hostname'], "bacula.custommessage", msg) ]
+metrics = [ Metric(conf['hostname'], "bareos.custommessage", msg) ]
 logging.info( "sending custom message to '{0}': '{1}'".format(conf['zabbix_server'], metrics) )
 send_to_zabbix(metrics, conf['zabbix_server'], 10051, 20)
 

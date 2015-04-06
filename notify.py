@@ -15,7 +15,7 @@ from zbxsend import Metric, send_to_zabbix
 from conf import conf
 
 def sendmail(jname, jtype, jlevel, jexit_code, jmsg, recipients):
-    subject = "Bacula: {0} {1} of {2} {3}".format(jlevel, jtype, jname, jexit_code)
+    subject = "Bareos: {0} {1} of {2} {3}".format(jlevel, jtype, jname, jexit_code)
     logging.debug( "sending email ({0}) to '{1}'".format(subject, recipients) )
 
     msg = MIMEText(jmsg)
@@ -43,11 +43,11 @@ if sys.version_info >= (3,):
 parser = argparse.ArgumentParser(
             formatter_class=RawTextHelpFormatter,
             description=
-"""Simple script to send Bacula reports to Zabbix.
-Should be used in Bacula-dir config instead of mail command:
+"""Simple script to send Bareos reports to Zabbix.
+Should be used in Bareos-dir config instead of mail command:
     mail = <admin@localhost> = all, !skipped
     mailcommand = "{0} '%n' '%t' '%l' '%e' [--recipients '%r'] [--email-on-fail] [--email-on-success]"
-Hostnames in Zabbix and Bacula must correspond
+Hostnames in Zabbix and Bareos must correspond
 """.format(os.path.realpath(__file__))
                                 )
 
@@ -74,41 +74,41 @@ args = parser.parse_args()
 tests = (
 
     ("\s*FD Files Written:\s+([0-9]+)\s*",
-        "bacula.fd_fileswritten",
+        "bareos.fd_fileswritten",
         lambda x: x.group(1)),
 
     ("\s*SD Files Written:\s+([0-9]+)\s*",
-        "bacula.sd_fileswritten",
+        "bareos.sd_fileswritten",
         lambda x: x.group(1)),
 
     ("\s*FD Bytes Written:\s+([0-9][,0-9]*)\s+\(.*\)\s*",
-        "bacula.fd_byteswritten",
+        "bareos.fd_byteswritten",
         lambda x: x.group(1).translate(None, ",")),
 
     ("\s*SD Bytes Written:\s+([0-9][,0-9]*)\.*",
-        "bacula.sd_byteswritten",
+        "bareos.sd_byteswritten",
         lambda x: x.group(1).translate(None, ",")),
 
     ("\s*Last Volume Bytes:\s+([0-9][,0-9]*).*",
-        "bacula.lastvolumebytes",
+        "bareos.lastvolumebytes",
         lambda x: x.group(1).translate(None, ",")),
 
     ("\s*Files Examined:\s+([0-9][,0-9]*)\s*",
-        "bacula.verify_filesexamined",
+        "bareos.verify_filesexamined",
         lambda x: x.group(1).translate(None, ",")),
 
     ("\s*Non-fatal FD errors:\s+([0-9]+)\s*",
-        "bacula.fd_errors_non_fatal",
+        "bareos.fd_errors_non_fatal",
         lambda x: x.group(1)),
 
     ("\s*SD Errors:\s+([0-9]+)\s*",
-        "bacula.sd_errors",
+        "bareos.sd_errors",
         lambda x: x.group(1))
 
 )
 
 result = {}
-result['bacula.job_exit_code'] = args.job_exit_code
+result['bareos.job_exit_code'] = args.job_exit_code
 
 in_msg = ""
 # Get values from input

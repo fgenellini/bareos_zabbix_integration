@@ -18,17 +18,17 @@
             </groups>
             <applications>
                 <application>
-                    <name>Bacula director</name>
+                    <name>Bareos director</name>
                 </application>
             </applications>
             <items>
                 <item>
-                    <name>bacula.custommessage</name>
+                    <name>bareos.custommessage</name>
                     <type>2</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>bacula.custommessage</key>
+                    <key>bareos.custommessage</key>
                     <delay>0</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -59,7 +59,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Bacula director</name>
+                            <name>Bareos director</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -68,11 +68,11 @@
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>Bacula jobs discovery</name>
+                    <name>Bareos jobs discovery</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>bacula.jobs</key>
+                    <key>bareos.jobs</key>
                     <delay>60</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -97,12 +97,12 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
-                            <name>bacula.fd_byteswritten[{#JOBNAME}]</name>
+                            <name>bareos.fd_byteswritten[{#JOBNAME}]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.fd_byteswritten[{#JOBNAME}]</key>
+                            <key>bareos.fd_byteswritten[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -133,19 +133,19 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>bacula.fd_errors_non_fatal[{#JOBNAME}]</name>
+                            <name>bareos.fd_errors_non_fatal[{#JOBNAME}]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.fd_errors_non_fatal[{#JOBNAME}]</key>
+                            <key>bareos.fd_errors_non_fatal[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -176,19 +176,19 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>bacula.fd_fileswritten[{#JOBNAME}]</name>
+                            <name>bareos.fd_fileswritten[{#JOBNAME}]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.fd_fileswritten[{#JOBNAME}]</key>
+                            <key>bareos.fd_fileswritten[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -219,19 +219,19 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>bacula.job_exit_code[{#JOBNAME}]</name>
+                            <name>bareos.job_exit_code[{#JOBNAME}]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.job_exit_code[{#JOBNAME}]</key>
+                            <key>bareos.job_exit_code[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>7</history>
                             <trends>365</trends>
@@ -262,19 +262,19 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>bacula.lastvolumebytes[{#JOBNAME}]</name>
+                            <name>bareos.lastvolumebytes[{#JOBNAME}]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.lastvolumebytes[{#JOBNAME}]</key>
+                            <key>bareos.lastvolumebytes[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -305,19 +305,19 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>bacula.sd_byteswritten[{#JOBNAME}]]</name>
+                            <name>bareos.sd_byteswritten[{#JOBNAME}]]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.sd_byteswritten[{#JOBNAME}]</key>
+                            <key>bareos.sd_byteswritten[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -348,19 +348,19 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>bacula.sd_errors[{#JOBNAME}]</name>
+                            <name>bareos.sd_errors[{#JOBNAME}]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.sd_errors[{#JOBNAME}]</key>
+                            <key>bareos.sd_errors[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -391,19 +391,19 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>bacula.sd_fileswritten[{#JOBNAME}]</name>
+                            <name>bareos.sd_fileswritten[{#JOBNAME}]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.sd_fileswritten[{#JOBNAME}]</key>
+                            <key>bareos.sd_fileswritten[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -434,19 +434,19 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>bacula.verify_filesexamined[{#JOBNAME}]</name>
+                            <name>bareos.verify_filesexamined[{#JOBNAME}]</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>bacula.verify_filesexamined[{#JOBNAME}]</key>
+                            <key>bareos.verify_filesexamined[{#JOBNAME}]</key>
                             <delay>0</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -477,7 +477,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Bacula director</name>
+                                    <name>Bareos director</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -486,7 +486,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{MyTemplate_Bareos:bacula.job_exit_code[{#JOBNAME}].regexp(^OK$)}=0</expression>
+                            <expression>{MyTemplate_Bareos:bareos.job_exit_code[{#JOBNAME}].regexp(^OK$)}=0</expression>
                             <name>Backup error for job [{#JOBNAME}] on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
@@ -495,7 +495,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{MyTemplate_Bareos:bacula.job_exit_code[{#JOBNAME}].nodata(129600)}#0</expression>
+                            <expression>{MyTemplate_Bareos:bareos.job_exit_code[{#JOBNAME}].nodata(129600)}#0</expression>
                             <name>Backup job [{#JOBNAME}] was not started for 36 hours on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
@@ -504,8 +504,8 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{MyTemplate_Bareos:bacula.fd_errors_non_fatal[{#JOBNAME}].last(0)}#0</expression>
-                            <name>Bacula job [{#JOBNAME}] FD non-fatal error on {HOSTNAME}</name>
+                            <expression>{MyTemplate_Bareos:bareos.fd_errors_non_fatal[{#JOBNAME}].last(0)}#0</expression>
+                            <name>Bareos job [{#JOBNAME}] FD non-fatal error on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -513,8 +513,8 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{MyTemplate_Bareos:bacula.sd_errors[{#JOBNAME}].last(0)}#0</expression>
-                            <name>Bacula job [{#JOBNAME}] SD errors on {HOSTNAME}</name>
+                            <expression>{MyTemplate_Bareos:bareos.sd_errors[{#JOBNAME}].last(0)}#0</expression>
+                            <name>Bareos job [{#JOBNAME}] SD errors on {HOSTNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -533,8 +533,8 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{MyTemplate_Bareos:bacula.custommessage.regexp(&quot;^0$&quot;)}=0</expression>
-            <name>Bacula custom message on {HOSTNAME}: [{ITEM.LASTVALUE}]. Set to 0 to reset trigger.</name>
+            <expression>{MyTemplate_Bareos:bareos.custommessage.regexp(&quot;^0$&quot;)}=0</expression>
+            <name>Bareos custom message on {HOSTNAME}: [{ITEM.LASTVALUE}]. Set to 0 to reset trigger.</name>
             <url/>
             <status>0</status>
             <priority>4</priority>

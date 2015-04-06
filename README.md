@@ -1,9 +1,9 @@
-WARNING: https://www.bareos.org/en/faq/items/why_fork.html You may be interested in using Bareos instead of original Bacula.
+WARNING: https://www.bareos.org/en/faq/items/why_fork.html You may be interested in using Bareos instead of original Bareos.
 
-bacula_zabbix_integration
+bareos_zabbix_integration
 =========================
 
-Scripts and template to integrate bacula with zabbix.
+Scripts and template to integrate bareos with zabbix.
 
 Abilities
 ---------
@@ -25,7 +25,7 @@ Triggers
 Installation
 ------------
 
-* Copy file somewhere. Default is /etc/bacula/bacula-to-zabbix
+* Copy file somewhere. Default is /etc/bareos/bareos-to-zabbix
 * Make sure that zabbix user can launch bconsole and get output of 'show jobs' command.
 * Tweak conf.py:
 	* path to zabbix_sender
@@ -34,15 +34,15 @@ Installation
 	* timeout for bconsole command in seconds (default 5 seconds)
 	* hostname for sending messages to zabbix
 * Add UserParameter from to zabbix_agentd.conf. Example in file conf-zabbix_agentd-userparam. Restart zabbix_agentd
-* Config Messages resuorce in bacula-director.conf. Example in file conf-bacula-dir-messages. You can directly include this file with @/etc/bacula/bacula-to-zabbix/conf-bacula-dir-messages. Reload config for bacula-director
-* Add template tmpl bacula-director.xml to zabbix. Assign it to host with bacula-director.
+* Config Messages resuorce in bareos-director.conf. Example in file conf-bareos-dir-messages. You can directly include this file with @/etc/bareos/bareos-to-zabbix/conf-bareos-dir-messages. Reload config for bareos-director
+* Add template tmpl bareos-director.xml to zabbix. Assign it to host with bareos-director.
 * Disable auto-generated triggers for jobs that are not backup type(restore jobs, ...)
 
 Feedback
 --------
 
 Feel free to send bug reports and feature requests here:
- * https://github.com/selivan/bacula_zabbix_integration/issues
+ * https://github.com/selivan/bareos_zabbix_integration/issues
  * mail: selivan5 AT yandex.ru
 
 If you are using this solution in production - please, write me few strings about it. It's very important for me to know that my work is not meaningless.
