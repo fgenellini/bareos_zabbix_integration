@@ -74,41 +74,41 @@ args = parser.parse_args()
 tests = (
 
     ("\s*FD Files Written:\s+([0-9]+)\s*",
-        "bareos.fd_fileswritten",
+        "{0}.fd_fileswritten".format(conf['type']),
         lambda x: x.group(1)),
 
     ("\s*SD Files Written:\s+([0-9]+)\s*",
-        "bareos.sd_fileswritten",
+        "{0}.sd_fileswritten".format(conf['type']),
         lambda x: x.group(1)),
 
     ("\s*FD Bytes Written:\s+([0-9][,0-9]*)\s+\(.*\)\s*",
-        "bareos.fd_byteswritten",
+        "{0}.fd_byteswritten".format(conf['type']),
         lambda x: x.group(1).translate(None, ",")),
 
     ("\s*SD Bytes Written:\s+([0-9][,0-9]*)\.*",
-        "bareos.sd_byteswritten",
+        "{0}.sd_byteswritten".format(conf['type']),
         lambda x: x.group(1).translate(None, ",")),
 
     ("\s*Last Volume Bytes:\s+([0-9][,0-9]*).*",
-        "bareos.lastvolumebytes",
+        "{0}.lastvolumebytes".format(conf['type']),
         lambda x: x.group(1).translate(None, ",")),
 
     ("\s*Files Examined:\s+([0-9][,0-9]*)\s*",
-        "bareos.verify_filesexamined",
+        "{0}.verify_filesexamined".format(conf['type']),
         lambda x: x.group(1).translate(None, ",")),
 
     ("\s*Non-fatal FD errors:\s+([0-9]+)\s*",
-        "bareos.fd_errors_non_fatal",
+        "{0}.fd_errors_non_fatal".format(conf['type']),
         lambda x: x.group(1)),
 
     ("\s*SD Errors:\s+([0-9]+)\s*",
-        "bareos.sd_errors",
+        "{0}.sd_errors".format(conf['type']),
         lambda x: x.group(1))
 
 )
 
 result = {}
-result['bareos.job_exit_code'] = args.job_exit_code
+result['{0}.job_exit_code'.format(conf['type'])] = args.job_exit_code
 
 in_msg = ""
 # Get values from input

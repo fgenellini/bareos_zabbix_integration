@@ -1,7 +1,7 @@
-bareos_zabbix_integration
+bareos/bacula zabbix_integration
 =========================
 
-Scripts and template to integrate bareos with zabbix.
+Scripts and template to integrate bareos/bacula with zabbix.
 
 Abilities
 ---------
@@ -26,16 +26,17 @@ Installation
 
 * install zbxsend python module
 	* `pip install zbxsend` or `pypi-install zbxsend` or `any command related to your distro`
-* `cd /etc/bareos`
+* `cd /etc/bareos` or `cd /etc/bacula`
 * `git clone https://github.com/paleg/bareos_zabbix_integration.git`
-* Make sure that zabbix user can launch bconsole and get output of 'show jobs' command (add 'zabbix' user to 'bareos' group)
+* Make sure that zabbix user can launch bconsole and get output of 'show jobs' command (add 'zabbix' user to 'bareos/bacula' group)
 * Tweak conf.py:
-	* path to zabbix agent conf
-	* bconsole config file
-	* timeout for bconsole command in seconds (default 5 seconds)
+    * server type (`bareos` or `bacula`)
+    * path to zabbix agent conf
+    * bconsole config file
+    * timeout for bconsole command in seconds (default 5 seconds)
     * log dir
     * email settings ('From' header and smtp server)
-* Add UserParameter from to zabbix_agentd.conf ( `UserParameter=bareos.jobs,/etc/bareos/bareos_zabbix_integration/get-bareos-jobs-json.py` )
-* Config Messages resource in bareos-dir.conf. ( Samples can be found with `./notify.py --help` and `./notify_operator.py --help` )
-* Add template MyTemplate_Bareos.xml to zabbix. Assign it to host with bareos-director.
+* Add UserParameter from to zabbix_agentd.conf ( `UserParameter=bareos.jobs,/etc/bareos/bareos_zabbix_integration/get-jobs.py` or `UserParameter=bacula.jobs,/etc/bacula/bareos_zabbix_integration/get-jobs.py`)
+* Config Messages resource in bareos-dir.conf/bacula-dir.conf. ( Samples can be found with `./notify.py --help` and `./notify_operator.py --help` )
+* Add template MyTemplate_Bareos.xml/MyTemplate_Bacula.xml/ to zabbix. Assign it to host with bareos/bacula director.
 * Disable auto-generated triggers for jobs that are not backup type(restore jobs, ...)
