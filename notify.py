@@ -108,7 +108,6 @@ tests = (
 )
 
 result = {}
-result['{0}.job_exit_code'.format(conf['type'])] = args.job_exit_code
 
 in_msg = ""
 # Get values from input
@@ -121,6 +120,13 @@ for line in sys.stdin.readlines():
             logging.debug(line)
             result[key] = value(match)
             continue
+
+if not result:
+    # TODO: send email?
+    logging.info("It is not a message about job")
+    exit(0)
+
+result['{0}.job_exit_code'.format(conf['type'])] = args.job_exit_code
 
 logging.debug(repr(in_msg))
 # DEBUG
