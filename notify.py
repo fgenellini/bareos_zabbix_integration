@@ -138,7 +138,7 @@ for key, value in result.items():
 
 # Send result to zabbix
 logging.info( "sending metrics to '{0}': '{1}'".format(conf['zabbix_server'], metrics) )
-send_to_zabbix(metrics, conf['zabbix_server'], 10051, 20)
+send_to_zabbix(metrics, conf['zabbix_server'], 10051)
 
 # Send emails (if requested)
 if (args.recipients and
