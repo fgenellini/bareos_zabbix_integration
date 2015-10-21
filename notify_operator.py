@@ -62,7 +62,7 @@ msg = sys.stdin.read()
 
 metrics = [ Metric(conf['hostname'], "{0}.custommessage".format(conf['type']), msg) ]
 logging.info( "sending custom message to '{0}': '{1}'".format(conf['zabbix_server'], metrics) )
-send_to_zabbix(metrics, conf['zabbix_server'], 10051, 20)
+send_to_zabbix(metrics, conf['zabbix_server'], 10051)
 
 if args.recipients:
     sendmail(msg, args.recipients)
